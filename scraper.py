@@ -64,7 +64,7 @@ def parse_entry(entry):
         if n.lower() in neighborhood.lower():
             neighborhood_match = False
 
-    ret['match'] = price_match and neighborhood_match
+    ret['match'] = price_match and neighborhood_match and br_match
 
     return ret
 
