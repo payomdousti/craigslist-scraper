@@ -23,6 +23,7 @@ import urllib2
 from config import settings
 
 PRICE_REGEX = re.compile('\$([\d]+)')
+BR_REGEX = re.compile('\dbr')
 all_entries = {}
 
 def parse_entry(entry):
@@ -36,11 +37,18 @@ def parse_entry(entry):
     hook = link.contents[0]
     ret['hook'] = hook
 
+    br = BR_REGEX.search(hook)
+    br_match = False
+    if br:
+        ret['br'] = br[0]
+        if ret['br'] <= settings.max_br and ret['br'] >= settings.min_br:
+            br_match = True
+
     price_g = PRICE_REGEX.search(hook)
     price_match = False
     if price_g:
         ret['price'] = int(price_g.group(1))
-        if ret['price'] <= settings.max_rent:
+        if ret['price'] <= settings.max_rent and ret['price'] >= settings.min_rent:
             price_match = True
             
 

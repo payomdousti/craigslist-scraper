@@ -13,22 +13,24 @@
 #   limitations under the License.
 
 settings_dict = {
-    'url' : 'http://sfbay.craigslist.org/apa/',
+    'url' : 'http://newyork.craigslist.org/aap/',
     'period' : 60,
     'neighborhoods' : [
-        'north beach', 
-        'telegraph hill', 
-        'marina', 
-        'cow hollow', 
-        'russian hill', 
-        'soma',
-	'downtown'
+        'east village', 
+        'williamsburg', 
+        'union square', 
+        'bedford', 
     ],
     'badhoods' : [
-        'oakland',
-        'san jose'
+        'bushwick',
+        'bedford stuyvesant',
+        'east williamsburg'
     ],
-    'max_rent' : 1700
+    'min_rent' : 2800,
+    'max_rent' : 3500,
+    'min_br' : 2,
+    'max_br' : 3
+
 }
 
 class Settings(object):
