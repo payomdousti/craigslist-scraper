@@ -26,8 +26,8 @@ settings_dict = {
         'bedford stuyvesant',
         'east williamsburg'
     ],
-    'min_rent' : 2800,
-    'max_rent' : 3500,
+    'min_rent_person' : 1200,
+    'max_rent_person' : 2000,
     'min_br' : 2,
     'max_br' : 3
 

@@ -48,7 +48,8 @@ def parse_entry(entry):
     price_match = False
     if price_g:
         ret['price'] = int(price_g.group(1))
-        if ret['price'] <= settings.max_rent and ret['price'] >= settings.min_rent:
+        rent_per_person = ret['price'] / ret['br']
+        if rent_per_person <= settings.max_rent_person and rent_per_person >= settings.min_rent_person:
             price_match = True
             
 
